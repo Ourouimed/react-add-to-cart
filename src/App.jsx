@@ -8,8 +8,13 @@ const App = ()=>{
   useEffect(()=>{
     localStorage.setItem('cart' , JSON.stringify(cart))
   } , [cart])
-  const handlAddToCart = (e)=>{
-      cart.includes(e) ? console.log('already added') : setCart([...cart , e])
+  const handlAddToCart = (e) => {
+    const isProductInCart = cart.some(item => item.id === e.id);
+    if (!isProductInCart) {
+        setCart([...cart, e]);
+    } else {
+        console.log('already added');
+    }
   }
   const handleRemoveFromCart = (e)=>{
     setCart(cart.filter(prod => prod.id !== e.id))

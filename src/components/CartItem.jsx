@@ -6,7 +6,7 @@ const CartItem = ()=>{
     const { handleRemoveFromCart} = useContext(MainContext)
     return <div key= {prod.id} className='p-1 border-b-2 border-border flex items-center gap-1 justify-between'>
         <div className='flex items-center gap-1'>
-            <img className='w-[50px] rounded-md' src={prod.imageUrl} alt={prod.name}></img>
+            <img className='w-[50px] rounded-md aspect-square' src={prod.imageUrl} alt={prod.name}></img>
             <h3 className='font-bold'>{prod.name}</h3>
         </div>
         <div className='flex items-center gap-1'>

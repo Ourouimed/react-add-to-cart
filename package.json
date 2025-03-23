@@ -2,7 +2,7 @@
   "name": "react-add-to-cart",
   "homepage": "https://ourouimed.github.io/react-add-to-cart",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,6 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
+    "prepreview": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
