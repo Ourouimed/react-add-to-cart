@@ -1,10 +1,13 @@
 import Cart from "./components/Cart"
 import ProductsList from "./components/ProductsList"
-import { useState} from "react"
+import { useState , useEffect} from "react"
 import {MainContext} from './context'
 
 const App = ()=>{
-  const [cart , setCart] = useState([])
+  const [cart , setCart] = useState(JSON.parse(localStorage.getItem('cart')) || [])
+  useEffect(()=>{
+    localStorage.setItem('cart' , JSON.stringify(cart))
+  } , [cart])
   const handlAddToCart = (e)=>{
       cart.includes(e) ? console.log('already added') : setCart([...cart , e])
   }
@@ -14,8 +17,8 @@ const App = ()=>{
   const handleClearCart = ()=>{
     setCart([])
   }
-  return <div className='p-4 w-[1200px] max-w-full mx-auto bg-gray-100 rounded-lg'>
-      <div className="grid grid-cols-[7fr_3fr] gap-2">
+  return <div className='p-4  max-w-full mx-auto bg-gray-100 rounded-lg'>
+      <div className="grid md:grid-cols-[7fr_3fr] grid-cols-1 gap-4">
       <MainContext.Provider value={{handlAddToCart}}>
             <ProductsList />
         </MainContext.Provider>
