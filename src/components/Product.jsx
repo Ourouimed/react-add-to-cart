@@ -5,7 +5,7 @@ const Product = ()=>{
     let {handlAddToCart} = useContext(MainContext);
     return (
         <div
-            className='shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300'
+            className='shadow-md bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300'
             key={prod.id}
         >
            <div className="overflow-hidden"> <img

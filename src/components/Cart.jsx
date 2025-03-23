@@ -61,10 +61,13 @@ const Cart = ()=>{
         </h1>
         <div className="mt-4">
             <h3 className="mb-2" title="availible coupon codes on readme.md file">Do you have a coupon code?</h3>
-            <input className='border-2 border-border p-2 rounded-md w-full mb-2' placeholder="your coupon here" value={couponVal} onChange={(e)=> setCouponVal(e.target.value)} type="text"></input>
-            <button className="bg-secondary text-white py-2 px-4 rounded-md w-full" onClick={handleCoupon}>Apply</button>
-            {couponError!= null && <p>{couponError}</p>}
-            {cart.length > 0 && <button className="bg-primary cursor-pointer py-2 px-4 rounded text-white mt-4 w-full rounded-md" onClick={handleClearCart}>Clear Cart</button>}
+            <div className="flex items-center gap-1">
+                <input className='border-2 border-border p-2 rounded-md w-full outline-none' placeholder="your coupon here" value={couponVal} onChange={(e)=> setCouponVal(e.target.value)} type="text"></input>
+                <button className="bg-primary text-white py-2 px-4 rounded-md w-full cursor-pointer" onClick={handleCoupon}>Apply</button>
+            </div>
+           
+            {couponError!= null && <p className="text-red-500">{couponError}</p>}
+            {cart.length > 0 && <button className="bg-gray-400 cursor-pointer py-2 px-4 rounded text-white mt-4 w-full rounded-md" onClick={handleClearCart}>Clear Cart</button>}
         </div>
         
     </div>
